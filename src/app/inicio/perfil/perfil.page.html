@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Usuario:</ion-card-subtitle>
+      <ion-card-title>Javier Quinteros</ion-card-title>
+      <ion-img src="https://bolavip.com/__export/1577912996106/sites/bolavip/img/2020/01/01/fakert1_crop1577912711947.jpg_1159711837.jpg"></ion-img>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Analista Programador Computacional
+    </ion-card-content>
+  </ion-card>
+   
+  <ion-card>
+    <ion-card-content>
+      Datos del usuario
+    </ion-card-content>
+    <ion-item>
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-label>ja.quinterosg@duocuc.cl</ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-icon name="call-outline" slot="start"></ion-icon>
+      <ion-label>9 2003 0623</ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-button expand="block" fill="clear" shape="round" [routerLink]="['/home']">
+    Cerrar sesion
+  </ion-button>
+</ion-content>

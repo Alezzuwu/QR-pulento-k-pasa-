@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Generacion de QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+<ion-input type="text" placeholder="Ingrese el sitio del que desea crear un QR" [(ngModel)]="qrdata"></ion-input>
+  
+  <ion-button full color="secondary" (click)="create()">
+    Generar
+  </ion-button>
+  
+  <ion-button full color="secondary" (click)="clear()">
+    Limpiar
+  </ion-button>
+  
+   <ion-card *ngIf="createCode" class="ion-padding">
+    <ngx-qrcode [value]="createCode"></ngx-qrcode>
+     <ion-card-content>
+     Codigo QR de: {{createCode}}
+     </ion-card-content>
+    </ion-card>
+</ion-content>
