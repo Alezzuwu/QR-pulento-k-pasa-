@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="uwu" >
+  <ion-toolbar color="azulDuoc" >
     <ion-title class="ion-text-center">
       <ion-img src="https://lh3.googleusercontent.com/proxy/ZAuAQ89uidu2XCj493LLCsjlV1ra5dC9Ox9Xh1huVKNBKu6TTksDJQsM50RCX2LmL4n2uNu36vRZwPGCeidRVEMco47UUVuCGQ" class="image"></ion-img>
     </ion-title>
@@ -10,7 +10,7 @@
   <!--Banner-->
   <div>
     <ion-grid class="ion-padding-top">
-      
+
       <ion-row class="ion-text-center">
         <ion-col>
           <ion-text>
@@ -19,102 +19,58 @@
         </ion-col>
       </ion-row>
 
-      <ion-row class="ion-text-center">
-        <ion-col>
+      <ion-row>
+        <ion-col class="ion-text-center">
           <ion-text>
-            <h4>¿Que tipo de usuario eres?</h4>
-            <ion-card-subtitle>(deslisa a la derecha si no eres este tipo de usuario)</ion-card-subtitle>
+            <h1>Bienvenido</h1>
           </ion-text>
         </ion-col>
       </ion-row>
+
     </ion-grid>
 
 
     <!--Slides inicio de sesion (Alumno/Profesor)-->
-    <div class="center">
-      <ion-slides pager="ios" class="ion-padding-bottom">
-        <ion-slide>
-          <ion-grid>
-            <ion-row>
-              <ion-col class="ion-text-center">
-                <ion-text>
-                  <h1>Alumno</h1>
-                </ion-text>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col class="ion-text-left">
-                <p>Nombre de usuario</p>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <ion-item>
-                  <ion-textarea placeholder="Usuario Institucional"></ion-textarea>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col class="ion-text-left">
-                <p>Contraseña</p>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <ion-item>
-                  <ion-textarea placeholder="Contraseña"></ion-textarea>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-slide>
-        <ion-slide>
-          <ion-grid>
-            <ion-row>
-              <ion-col class="ion-text-center">
-                <ion-text>
-                  <h1>Profesor</h1>
-                </ion-text>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col class="ion-text-left">
-                <p>Nombre de usuario</p>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <ion-item>
-                  <ion-textarea placeholder="Usuario Institucional"></ion-textarea>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col class="ion-text-left">
-                <p>Contraseña</p>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <ion-item>
-                  <ion-textarea placeholder="Contraseña"></ion-textarea>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-slide>
-      </ion-slides>
-    </div>
-    <!-- boton iniciar sesion-->
-    <ion-grid class="ion-text-center">
-      <ion-row>
-        <ion-col class="ion-text-center">
-          <ion-button [routerLink]="['/inicio/perfil']" color="warning">
-            Iniciar sesion
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+
+    
+
+    <form #form="ngForm" (ngSubmit)="login(form)">
+
+      <ion-grid>
+
+        <ion-row>
+          <ion-col class="ion-text-left">
+            <p>Nombre de usuario</p>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input name="user" type="text" placeholder="Usuario Institucional" ngModel required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col class="ion-text-left">
+            <p>Contraseña</p>
+          </ion-col>
+        </ion-row>
+  
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Contraseña" ngModel required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <div padding class="ion-text-center">
+          <ion-button size="large" type="submit" [disabled]="form.invalid" color="warning">Iniciar Sesion</ion-button>
+        </div>
+      </ion-grid>
+      
+    </form>
   </div>
 
   

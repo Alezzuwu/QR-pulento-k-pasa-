@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-perfil',
@@ -7,7 +11,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
 
-  constructor() { }
+  constructor(private alertCtrl: AlertController, private router : Router) {
+
+    
+   }
+
+   async presentConfirm() {
+    let alert = await this.alertCtrl.create({
+      header: 'Estas a punto de cerrar sesion',
+      message: 'Quieres cerrar sesion?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Confirmar',
+          handler: () => {
+            this.router.navigate(['/home']);
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
 
   ngOnInit() {
   }

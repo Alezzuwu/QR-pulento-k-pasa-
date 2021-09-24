@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="azulDuoc">
     <ion-title>Generacion de QR</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,11 +9,11 @@
 
 <ion-input type="text" placeholder="Ingrese el sitio del que desea crear un QR" [(ngModel)]="qrdata"></ion-input>
   
-  <ion-button full color="secondary" (click)="create()">
+  <ion-button full color="warning" (click)="create()">
     Generar
   </ion-button>
   
-  <ion-button full color="secondary" (click)="clear()">
+  <ion-button full color="warning" (click)="clear()">
     Limpiar
   </ion-button>
   
